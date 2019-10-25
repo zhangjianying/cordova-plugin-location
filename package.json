@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-location",
+  "version": "1.0.0",
+  "description": "utils.",
+  "cordova": {
+    "id": "cordova-plugin-location",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "author": "zhangjianying",
+  "license": "BSD"
+}

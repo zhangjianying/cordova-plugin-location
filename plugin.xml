@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-TWLocation"
+        version="1.0.0">
+
+  <name>cordova-plugin-location</name>
+
+  <description>Android location</description>
+
+  <author>zhangjianying</author>
+
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+      <js-module src="www/TWLocation.js" name="TWLocation">
+        <clobbers target="TWLocation" />
+      </js-module>
+
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-feature android:name="android.hardware.location.gps" />
+    </config-file>
+
+
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="TWLocation">
+          <param name="android-package" value="com.zsoftware.TWLocationPlugin" />
+        </feature>
+      </config-file>
+
+      <framework src="com.android.support:appcompat-v7:27+" />
+
+      <source-file src="src/GPSUtils.java" target-dir="src/com/zsoftware"/>
+      <source-file src="src/TWLocationPlugin.java" target-dir="src/com/zsoftware"/>
+      <source-file src="src/PermissionsUtils.java" target-dir="src/com/zsoftware"/>
+  </platform>
+
+
+
+
+
+</plugin>
